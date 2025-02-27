@@ -18,10 +18,12 @@ from django.conf import settings
 from django.conf.urls.static import static
 from django.contrib import admin
 from django.urls import path
+from . import views
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-]
+    path('', views.home, name='home'),  # Adicionando a URL para a página inicial
+] + static(settings.STATIC_URL, document_root=settings.STATIC_ROOT)  # Para servir arquivos estáticos (se necessário)
 
 #if settings.DEBUG:
  #   urlpatterns += static(
