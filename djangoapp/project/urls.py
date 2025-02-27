@@ -22,7 +22,8 @@ from . import views
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('', views.home, name='home'),  # Adicionando a URL para a página inicial
+    path('', views.home, name='home'),  # Página inicial
+    path('admin_page/', views.admin_page, name='admin_page'),  # Página de administração personalizada
 ] + static(settings.STATIC_URL, document_root=settings.STATIC_ROOT)  # Para servir arquivos estáticos (se necessário)
 
 #if settings.DEBUG:
